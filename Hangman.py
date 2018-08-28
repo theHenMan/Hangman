@@ -2,6 +2,7 @@ import os
 import random
 import socket
 import urllib.request
+from time import sleep
 
 
 hang_man = ["""
@@ -126,6 +127,7 @@ while guesses < 6:
             print(hang_man[guesses], end="\n\n")
             print(guessed_letters)
             print("\nThe correct word was", random_word_lower, end="\n\n\n")
+            sleep(10)
 
     else:
         guessed_letter_index = [i for i, e in enumerate(random_word_lower) if e == guessed_letter]
@@ -144,6 +146,7 @@ while guesses < 6:
             print(hang_man[guesses], end="\n")
             print("\nCONGRATULATIONS! \n\nYou win!!")
             print("\nThe word was", random_word_lower.upper(), end="\n\n\n")
+            sleep(10)
 
             # again = input("\nDo you want to play again? (yes/no) ")
             # if again.startswith("y"):
